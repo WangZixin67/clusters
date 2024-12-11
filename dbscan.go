@@ -79,7 +79,7 @@ func (c *dbscanClusterer) Learn(data [][]float64) error {
 	c.l = len(data)
 	c.s = c.numWorkers()
 	c.o = c.s - 1
-	c.f = c.l / c.s
+	c.f = (c.l + c.s - 1) / c.s
 
 	c.d = data
 
